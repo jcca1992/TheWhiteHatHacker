@@ -6,7 +6,7 @@
 export default {
   name: 'IndexPage',
   async asyncData({ $content }) {
-    const doc = await $content('hello').fetch()
+    const doc = await $content('Getting started INFOSEC').fetch()
 
     return { doc }
   },
