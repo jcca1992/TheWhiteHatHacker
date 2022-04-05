@@ -1,4 +1,5 @@
 export default {
+  ssr: false, // Disable Server Side rendering
   // Target
   target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -17,13 +18,17 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['~/assets/scss/main'],
+  css: ['~/assets/scss/main', '~/assets/scss/fonts'],
+
+  styleResources: {
+    scss: '~/assets/scss/variables.scss',
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: { dirs: ['~/components', '~/components/common'] },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -41,6 +46,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // https://www.npmjs.com/package/@nuxtjs/style-resources
+    '@nuxtjs/style-resources',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
