@@ -1,5 +1,7 @@
 <template>
-  <nuxt-content :document="doc" />
+  <main>
+    <nuxt-content :document="doc" />
+  </main>
 </template>
 
 <script>
